@@ -415,3 +415,85 @@ color: #fff;
 .project-description {
     margin-top: 20px;
 }
+
+/* Tăng kích thước cho chữ Projects và canh giữa */
+.project-description h2 {
+    text-align: center;
+    font-size: 3em; /* điều chỉnh kích thước theo ý thích */
+    margin-bottom: 20px;
+}
+
+/* Sắp xếp các carousel-item nằm trong 1 hàng và tăng kích thước chúng */
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;  /* Nếu nội dung vượt quá chiều rộng màn hình */
+    padding: 0 20px;
+}
+
+/* Cập nhật kích thước cố định cho carousel-item */
+.carousel-item {
+    position: relative;
+    margin: 10px;
+    flex: 0 0 500px; /* chiều rộng cố định cho mỗi item */
+    max-width: 550px;
+    height: 350px;    /* chiều cao cố định (điều chỉnh theo ý) */
+    overflow: hidden;
+}
+
+/* Định dạng ảnh bên trong và sử dụng CSS Scale để căn giữa */
+.carousel-item img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Nếu ảnh vượt quá container thì object-fit: cover sẽ đảm bảo ảnh phủ kín */
+    width: auto;
+    height: 100%;
+    transform: translate(-50%, -50%) scale(1);
+    object-fit: cover;
+}
+
+/* Lớp overlay cho hiệu ứng chồng lên ảnh */
+.carousel-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Tiêu đề trong overlay */
+.carousel-item .overlay h2 {
+    margin: 0;
+    font-size: 1.3em;
+}
+
+/* Mô tả hiển thị khi hover */
+.carousel-item .overlay .description {
+    margin-top: 10px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+/* Hover hiệu ứng cho overlay */
+.carousel-item:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-item:hover .overlay .description {
+    opacity: 1;
+    max-height: 200px; /* Điều chỉnh phụ thuộc lượng nội dung */
+}
