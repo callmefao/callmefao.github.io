@@ -1,200 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>HuynhAnhPhuong Profile | Responsive Websute Design</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huynh Anh Phuong | AI Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">HuynhAnhPhuong</a>
-        <div class="toggle" onclick="toggleMenu();"></div>
-        <ul class="menu">
-            <li><a href="#home" onclick="toggleMenu();">Home</a></li>
-            <li><a href="#about" onclick="toggleMenu();">About</a></li>
-            <li><a href="#services" onclick="toggleMenu();">Services</a></li>
-            <li><a href="#work" onclick="toggleMenu();">Projects</a></li>
-            <!-- <li><a href="#testimonial" onclick="toggleMenu();">Testimonial</a></li> -->
-            <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
-        </ul>
+    <header id="header">
+        <div class="container">
+            <a href="#" class="logo">HuynhAnhPhuong</a>
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="#home" class="menu-link">Home</a></li>
+                    <li><a href="#about" class="menu-link">About</a></li>
+                    <li><a href="#services" class="menu-link">Services</a></li>
+                    <li><a href="#work" class="menu-link">Projects</a></li>
+                    <li><a href="#contact" class="menu-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <section class="banner" id="home">
-        <div class="textBx">
-            <h2>Hello, I'm <br><span>Huynh Anh Phuong</span></h2>
-            <h3>I'm an AI Engineer</h3>
-            <a href="#" class="btn">About Me</a>
-        </div>
-    </section>
 
-    <section class="about" id="about">
-        <div class="heading">
-            <h1>About Me</h1>
-        </div>
-            <div class="content">
-            <div class="contentBx">
-                <h3>I am a Machine Learning enthusiast with a strong desire to apply technology in real-world settings to create highly applicable products. With a solid knowledge base and a continuous learning spirit, I hope to contribute to exciting and impactful projects.
-                </h3>
-            </div>
-
-            <div class="w50">
-                <img src="images/img1.jpg" class="img">
+    <section id="home" class="hero">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h2>Hello, I'm <br><span>Huynh Anh Phuong</span></h2>
+                <h3>I'm an AI Engineer</h3>
+                <a href="#about" class="btn">About Me</a>
             </div>
         </div>
     </section>
 
-    <section class="services" id="services">
-        <div class="heading white">
-            <h2>Our Services</h2>
-        </div>
-        <div class="content">
-            <div class="servicesBX">
-                <img src="images/icon1.png">
-                <h2>AI Engineer</h2>
-                <p></p>
-            </div>
-            <div class="servicesBX">
-                <img src="images/icon2.png">
-                <h2>Data Scientist</h2>
-                <p></p>
-            </div>
-            <div class="servicesBX">
-                <img src="images/icon3.png">
-                <h2>Data Analyst</h2>
-                <p></p>
-            </div>
-        </div>
-    </section>
-
-    <section class="work" id="work">
-        <div class="project-description">
-            <h2>Projects</h2>
-        </div>
-        <div class="carousel">
-            <!-- Project: Can Tho Rental Listings Scraper -->
-            <div class="carousel-item">
-                <img src="images/demo/CanThoMotel_demo.png" alt="Can Tho Rental Listings Demo">
-                <div class="overlay">
-                    <h2>Can Tho Rental Listings Scraper & Data Standardization (Personal Project):</h2>
-                    <div class="description">
-                        Extracted rental listings from a website about Can Tho motel, collecting key details such as title, price, area, phone number, and detail page link.<br>
-                        Github: <a href="https://github.com/callmefao/DemoCrawlData" target="_blank">Repository Link</a>
-                    </div>
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a Machine Learning enthusiast with a strong desire to apply technology in real-world settings to create highly applicable products. With a solid knowledge base and a continuous learning spirit, I hope to contribute to exciting and impactful projects.</p>
                 </div>
-            </div>
-            
-            <!-- Project: Career Level Prediction Model -->
-            <div class="carousel-item">
-                <img src="images/demo/NLP_Data_demo.png" alt="Career Level Prediction Model Demo" class="img">
-                <div class="overlay">
-                    <h2>Career Level Prediction Model (Personal Project):</h2>
-                    <div class="description">
-                        Developed a model to predict career levels from job postings using pandas, scikit-learn, and SMOTE for handling class imbalance.<br>
-                        Utilized TfidfVectorizer for feature extraction and Random Forest Classifier for predictions.<br>
-                        Github: <a href="https://github.com/callmefao/Sample-Mahine-Learning/tree/main/Simple_NLP" target="_blank">Repository Link</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project: Real-Time Vehicle Density Monitoring -->
-            <div class="carousel-item">
-                <img src="images/demo/Car_counting_demo.png" alt="Vehicle Density Demo" class="img">
-                <div class="overlay">
-                    <h2>Real-Time Vehicle Density Monitoring (Group Project):</h2>
-                    <div class="description">
-                        Develop a Flask web application that monitors traffic density by displaying a fixed road on a map and using the YOLO model for real-time vehicle counting.<br>
-                        The road color changes based on vehicle density, reflecting traffic conditions.<br>
-                        Github: <a href="https://github.com/callmefao/Realtime---Car-Counting" target="_blank">Repository Link</a>
-                    </div>
+                <div class="about-image">
+                    <img src="images/img1.jpg" alt="Huynh Anh Phuong">
                 </div>
             </div>
         </div>
-        <div class="heading">
-            <a href="#" class="btn">View More</a>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title light">My Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>AI Engineer</h3>
+                    <p>Developing and implementing AI models and solutions for real-world applications.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data Scientist</h3>
+                    <p>Analyzing complex datasets to extract valuable insights and drive data-informed decisions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Data Analyst</h3>
+                    <p>Creating visualizations and reports to communicate data findings effectively.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- <section class="testimonial" id="testimonial">
-        <div class="heading">
-            <h2>Testimonial</h2>
-            <p>I'm a Front End Web Developer.</p>
-        </div>
-        <div class="content">
-            <div class="testimonialBx">
-                <p>I'm a Front End Web Developer.I'm a Front End Web Developer.I'm a Front End Web Developer.</p>
-                <h3>Someone Famous<br><span>Creative Desigener</span></h3>
+    <section id="work" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/demo/CanThoMotel_demo.png" alt="Can Tho Rental Listings">
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Can Tho Rental Listings Scraper</h3>
+                        <p class="project-type">Personal Project</p>
+                        <p class="project-description">Extracted rental listings from a website about Can Tho motel, collecting key details such as title, price, area, phone number, and detail page link.</p>
+                        <a href="https://github.com/callmefao/DemoCrawlData" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/demo/chat.png" alt="Django Chatbot">
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Django Chatbot using google.openapi</h3>
+                        <p class="project-type">Personal Project</p>
+                        <p class="project-description">Developed a Django web app, call API from google.openapi to chat with LLM models</p>
+                        <a href="https://github.com/callmefao/GenAIChat-Web" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/demo/Car_counting_demo.png" alt="Vehicle Density Monitoring">
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Real-Time Vehicle Density Monitoring</h3>
+                        <p class="project-type">Group Project</p>
+                        <p class="project-description">Develop a Flask web application that monitors traffic density by displaying a fixed road on a map and using the YOLO model for real-time vehicle counting. The road color changes based on vehicle density, reflecting traffic conditions.</p>
+                        <a href="https://github.com/callmefao/Realtime---Car-Counting" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="testimonialBx">
-                <p>I'm a Front End Web Developer.I'm a Front End Web Developer.I'm a Front End Web Developer.</p>
-                <h3>Someone Famous<br><span>Creative Desigener</span></h3>
+            <div class="center-button">
+                <a href="#" class="btn outline">View More</a>
             </div>
         </div>
-    </section> -->
+    </section>
 
-    <section class="contact" id="contact">
-        <div class="heading white">
-            <h2>Contact US</h2>
-        </div>
-        <div class="content">
-            <div class="contactInfo">
-                <h3>Contact Info</h3>
-                <div class="contactInfoBx">
-                    <div class="box">
-                        <div class="icon">
-                            <i class="fa fa-map-marker"></i>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title light">Contact Me</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Info</h3>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div class="text">
-                            <h3>Address</h3>
-                            <p>Can Tho<br> Viet Nam</p>
+                        <div class="info-text">
+                            <h4>Address</h4>
+                            <p>Can Tho, Viet Nam</p>
                         </div>
                     </div>
-                    <div class="box">
-                        <div class="icon">
-                            <i class="fa fa-phone"></i>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
                         </div>
-                        <div class="text">
-                            <h3>Phone</h3>
+                        <div class="info-text">
+                            <h4>Phone</h4>
                             <p>+84943848459</p>
                         </div>
                     </div>
-                    <div class="box">
-                        <div class="icon">
-                            <i class="fa fa-envelope-o"></i>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
                         </div>
-                        <div class="text">
-                            <h3>Email</h3>
+                        <div class="info-text">
+                            <h4>Email</h4>
                             <p>phuongha27404@gmail.com</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="formBx">
-                <form>
-                    <h3> Message Me</h3>
-                    <input type="text" name="" placeholder="Full Name">
-                    <input type="email" name="" placeholder="Email">
-                    <textarea placeholder="Your Message"></textarea>
-                    <input type="submit" value="Send">
-                </form>
+                <div class="contact-form">
+                    <h3>Message Me</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn submit-btn">Send Message</button>
+                        <div id="form-message" class="form-message"></div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="copyright">
-        <p>Copyrights By Lê Hiền Triết - 2020</p>
-    </div>
-    <script type="text/javascript">
-        window.addEventListener('scroll',function(){
-            var header = document.querySelector('header');
-            header.classList.toggle('sticky',window.scrollY > 0);
-        });
-        function toggleMenu(){
-            var menuToggle = document.querySelector('.toggle');
-            var menu = document.querySelector('.menu');
-            menuToggle.classList.toggle('active');
-            menu.classList.toggle('active')
-        }
-    </script>
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Huynh Anh Phuong. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
