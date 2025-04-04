@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepfake Studio | Huynh Anh Phuong</title>
+    <link rel="stylesheet" href="demo-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS đặc biệt cho trang deepfake-studio */
+        .project-banner {
+            background-image: url('images/demo/deepfake_demo.png');
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <a href="index.html" class="logo">HuynhAnhPhuong</a>
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html#home" class="menu-link">Home</a></li>
+                    <li><a href="index.html#about" class="menu-link">About</a></li>
+                    <li><a href="index.html#services" class="menu-link">Services</a></li>
+                    <li><a href="index.html#work" class="menu-link">Projects</a></li>
+                    <li><a href="index.html#contact" class="menu-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="project-banner">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="project-banner-content">
+                <h1>🌀 Deepfake Studio</h1>
+                <span class="project-type-badge">Group Project</span>
+                <p>A comprehensive web application for deepfake detection and generation with research focus</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-details">
+        <div class="container">
+            <div class="project-content">
+                <div class="project-description">
+                    <h2><span class="emoji-title">🌟</span>Project Overview</h2>
+                    <p>
+                        DeepfakeStudio is a web application built with Flask that offers both deepfake detection and generation capabilities. The project focuses primarily on research and implementation of various deepfake detection models, while also providing a face-swapping generation feature.
+                    </p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item"><span>🔍</span> Deepfake Detection</div>
+                        <div class="feature-item"><span>🎭</span> Face Swapping</div>
+                    </div>
+
+                    <div class="demo-section">
+                        <h2><span class="emoji-title">🎥</span>Demo</h2>
+                        
+                        <!-- Video Showcase -->
+                        <div class="demo-video-container">
+                            <h3>🎬 Full Feature Demo Video</h3>
+                            <video controls class="demo-video">
+                                <source src="images\demo\deepfake-studio\full-demo.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <h3><span class="emoji-title">🔍</span>Deepfake Detection</h3>
+                        <table class="demo-table">
+                            <tr>
+                                <td><h4>✅ Real Face Detection</h4></td>
+                                <td><h4>❌ Fake Face Detection</h4></td>
+                                <td><h4>🔄 All In One</h4></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images\demo\deepfake-studio\demo_real.png" alt="Real Face Detection"></td>
+                                <td><img src="images\demo\deepfake-studio\demo_fake.png" alt="Fake Face Detection"></td>
+                                <td><img src="images\demo\deepfake-studio\fake_and_real.png" alt="All In One Detection"></td>
+                            </tr>
+                        </table>
+                        
+                        <h3><span class="emoji-title">🎭</span>Deepfake Generation</h3>
+                        <table class="demo-table">
+                            <tr>
+                                <td><h4>🖼 Source Image</h4></td>
+                                <td><h4>🎬 Target Video</h4></td>
+                                <td><h4>🔀 Face-Swapped Video</h4></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images\demo\deepfake-studio\source.png" alt="Source Face"></td>
+                                <td><img src="images\demo\deepfake-studio\target.gif" alt="Original Video"></td>
+                                <td><img src="images\demo\deepfake-studio\demo.gif" alt="Face-Swapped Video"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <a href="index.html#work" class="back-to-projects">
+                        <i class="fas fa-arrow-left"></i> Back to Projects
+                    </a>
+                </div>
+                
+                <div class="project-sidebar">
+                    <div class="project-info-item">
+                        <h3>Project Type</h3>
+                        <p>Group Research Project</p>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        <h3>Timeline</h3>
+                        <p>January 2025 - April 2025</p>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        <h3>My Role</h3>
+                        <p>Full-stack Developer & AI Specialist</p>
+                        <ul>
+                            <li>Deployed detection models to web application (both frontend and backend)</li>
+                            <li>Developed face swapping functionality for the web interface</li>
+                            <li>Created Shallow Neural Network model with ~82% accuracy</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        <h3>Team Size</h3>
+                        <p>5 Members</p>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        <h3>Technologies</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">ResNet50</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">ONNX</span>
+                            <span class="tech-tag">MediaPipe</span>
+                            <span class="tech-tag">InsightFace</span>
+                            <span class="tech-tag">VidGear</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        h3>Key Achievements</h3>
+    <ul>
+        <li>82% detection accuracy with Shallow NN model</li>
+        <li>Successfully implemented ResNet50 architecture (83.5% of accuracy) for improved detection</li>
+        <li>Developed real-time detection system supporting multiple inputs (YouTube URLs, uploaded videos, webcam)</li>
+        <li>Deployed fully functional web interface for detection and generation</li>
+        <li>Implemented face-swapping capabilities</li>
+    </ul>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        <h3>Links</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/callmefao/DeepfakeStudio" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> GitHub Repository
+                            </a>
+                            <a href="https://www.overleaf.com/read/hbzsdfxvtydh#bf2f3d" target="_blank" class="project-link">
+                                <i class="fas fa-file-alt"></i> Technical Report
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Huynh Anh Phuong. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="demo-script.js"></script>
+</body>
+</html>

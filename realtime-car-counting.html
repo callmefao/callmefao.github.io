@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Car Counting | Huynh Anh Phuong</title>
+    <link rel="stylesheet" href="demo-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS đặc biệt cho trang realtime-car-counting */
+        .project-banner {
+            background-image: url('images/demo/Car_counting_demo.png');
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <a href="index.html" class="logo">HuynhAnhPhuong</a>
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html#home" class="menu-link">Home</a></li>
+                    <li><a href="index.html#about" class="menu-link">About</a></li>
+                    <li><a href="index.html#services" class="menu-link">Services</a></li>
+                    <li><a href="index.html#work" class="menu-link">Projects</a></li>
+                    <li><a href="index.html#contact" class="menu-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="project-banner">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="project-banner-content">
+                <h1>🚗 Real-time Car Counting</h1>
+                <span class="project-type-badge">Computer Vision Project</span>
+                <p>Interactive vehicle counting system with real-time visualization on interactive maps</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-details">
+        <div class="container">
+            <div class="project-content">
+                <div class="project-description">
+                    <h2><span class="emoji-title">🌟</span>Project Overview</h2>
+                    <p>
+                        This web application provides <strong>real-time vehicle counting</strong> on a road, displayed in <strong>4 interactive frames</strong>. The application visualizes traffic conditions using a <strong>map, vehicle counts, pie charts, and time series data</strong>. The system updates every few seconds to provide accurate traffic insights.
+                    </p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item"><span>🗺️</span> Interactive Map</div>
+                        <div class="feature-item"><span>🚗</span> Vehicle Counting</div>
+                        <div class="feature-item"><span>📊</span> Data Visualization</div>
+                        <div class="feature-item"><span>🔄</span> Real-time Updates</div>
+                    </div>
+
+                    <div class="demo-section">
+                        <h2><span class="emoji-title">🎥</span>Demo</h2>
+                        
+                        <h3><span class="emoji-title">📡</span>Live Stream Demo</h3>
+                        <div class="demo-video-container">
+                            <p>🔗 Source: <a href="https://www.youtube.com/watch?v=FsL_KQz4gpw" target="_blank">YouTube Video</a></p>
+                            <video controls class="demo-video">
+                                <source src="images/demo/realtime-car-counting/Youtube_livestream_video.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <h3><span class="emoji-title">🎞</span>Recorded Video Demo</h3>
+                        <div class="demo-video-container">
+                            <p>🔗 Source: <a href="https://www.youtube.com/watch?v=wqctLW0Hb_0" target="_blank">YouTube Video</a></p>
+                            <video controls class="demo-video">
+                                <source src="images/demo/realtime-car-counting/Youtube_video.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <h3><span class="emoji-title">⚙️</span>Application Features</h3>
+                        <table class="demo-table">
+                            <tr>
+                                <td><h4>🗺️ Frame 1 - Map</h4></td>
+                                <td><h4>🚗 Frame 2 - Vehicle Counting</h4></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images\demo\realtime-car-counting\map_frame.png" alt="Map Frame"></td>
+                                <td><img src="images\demo\realtime-car-counting\counting_frame.png" alt="Counting Frame"></td>
+                            </tr>
+                            <tr>
+                                <td><h4>📊 Frame 3 - Pie Chart</h4></td>
+                                <td><h4>📈 Frame 4 - Time Series</h4></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/demo/realtime-car-counting/pie_chart_frame.png" alt="Pie Chart Frame"></td>
+                                <td><img src="images/demo/realtime-car-counting/time_series_frame.png" alt="Time Series Frame"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <a href="index.html#work" class="back-to-projects">
+                        <i class="fas fa-arrow-left"></i> Back to Projects
+                    </a>
+                </div>
+                
+                <div class="project-sidebar">
+                    <div class="project-info-item">
+                        <h3>Project Type</h3>
+                        <p>Computer Vision & Data Visualization</p>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        <h3>Timeline</h3>
+                        <p>November 2024 - February 2025</p>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        <h3>My Role</h3>
+                        <p>Backend Developer & Computer Vision Engineer</p>
+                        <ul>
+                            <li>Implemented vehicle detection and counting algorithms</li>
+                            <li>Developed the Flask backend to integrate all components</li>
+                            <li>Created basic HTML/CSS structure for the frontend</li>
+                            <li>Coordinated data flow between detection system and visualization components</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        <h3>Team Size</h3>
+                        <p>5 Members</p>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        <h3>Technologies</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">YOLOv8</span>
+                            <span class="tech-tag">Folium</span>
+                            <span class="tech-tag">Plotly</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">pandas</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li><strong>Map Visualization:</strong> Displays road with color-coded traffic conditions that update every 2 seconds</li>
+                            <li><strong>Vehicle Detection:</strong> Real-time counting and classification of vehicles</li>
+                            <li><strong>Vehicle Classification:</strong> Categorizes vehicles into buses, cars, motorcycles, and trucks</li>
+                            <li><strong>Dynamic Charts:</strong> Time series and pie charts that update automatically with new data</li>
+                            <li><strong>Traffic Prediction:</strong> Uses vehicle data to predict road congestion</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        <h3>Links</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/callmefao/Realtime---Car-Counting" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> GitHub Repository
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=FsL_KQz4gpw" target="_blank" class="project-link">
+                                <i class="fab fa-youtube"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Huynh Anh Phuong. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="demo-script.js"></script>
+</body>
+</html>
