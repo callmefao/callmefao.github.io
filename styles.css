@@ -278,16 +278,43 @@
   
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+  }
+
+  @media (max-width: 1200px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
   }
   
   .service-card {
     background-color: rgba(255, 255, 255, 0.05);
-    padding: 40px 30px;
+    padding: 30px 20px; /* Giảm padding xuống để thích ứng với kích thước nhỏ hơn */
     border-radius: 10px;
     text-align: center;
     transition: var(--transition);
+  }
+  
+  /* Điều chỉnh font-size cho responsive tốt hơn */
+  @media (max-width: 1400px) {
+    .service-card h3 {
+      font-size: 1.3rem;
+    }
+    
+    .service-card p {
+      font-size: 0.95rem;
+    }
+    
+    .service-icon {
+      font-size: 2.5rem;
+    }
   }
   
   .service-card:hover {
