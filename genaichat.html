@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAIChat-Web | Huynh Anh Phuong</title>
+    <link rel="stylesheet" href="demo-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS đặc biệt cho trang GenAIChat-Web */
+        .project-banner {
+            background-image: url('images/demo/genai-chat-web/chat_banner.png');
+        }
+        
+        /* Styling cho phần chat demo */
+        .chat-demo-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+        
+        .chat-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .chat-header i {
+            margin-right: 10px;
+        }
+        
+        .chat-messages {
+            padding: 20px;
+            background-color: #f9f9f9;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+        }
+        
+        .message.user {
+            justify-content: flex-end;
+        }
+        
+        .message-content {
+            max-width: 80%;
+            padding: 12px 15px;
+            border-radius: 10px;
+        }
+        
+        .user .message-content {
+            background-color: var(--primary-color);
+            color: white;
+            border-top-right-radius: 0;
+        }
+        
+        .ai .message-content {
+            background-color: #e9e9e9;
+            border-top-left-radius: 0;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background-color: white;
+            border-top: 1px solid #eee;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            outline: none;
+        }
+        
+        .chat-input button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <a href="index.html" class="logo">HuynhAnhPhuong</a>
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html#home" class="menu-link">Home</a></li>
+                    <li><a href="index.html#about" class="menu-link">About</a></li>
+                    <li><a href="index.html#services" class="menu-link">Services</a></li>
+                    <li><a href="index.html#work" class="menu-link">Projects</a></li>
+                    <li><a href="index.html#contact" class="menu-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="project-banner">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="project-banner-content">
+                <h1>💬 GenAIChat-Web</h1>
+                <span class="project-type-badge">Web Application</span>
+                <p>A Django-powered application for real-time conversation with Google's Generative AI models</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-details">
+        <div class="container">
+            <div class="project-content">
+                <div class="project-description">
+                    <p>
+                        GenAIChat-Web is a web application built with Django that enables users to have real-time conversations with Google's Generative AI models. The application provides a clean, intuitive interface for interacting with language models while ensuring secure API key handling.
+                    </p>
+                    
+                    <h2><span class="emoji-title">🌟</span>Project Overview</h2>
+                    <p>
+                        As Large Language Models (LLMs) become increasingly powerful, there's a growing need for accessible interfaces that allow users to interact with these models. GenAIChat-Web addresses this need by providing a simple yet powerful platform for conversing with Google's Gemini models.
+                    </p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item"><span>💬</span> Real-time Chat</div>
+                        <div class="feature-item"><span>🔒</span> Secure API Handling</div>
+                        <div class="feature-item"><span>📱</span> Responsive Design</div>
+                        <div class="feature-item"><span>🔄</span> Multiple Models</div>
+                        <div class="feature-item"><span>🗃️</span> Chat History</div>
+                    </div>
+
+                    <div class="demo-section">
+                        <h2><span class="emoji-title">🎥</span>Demo</h2>
+                        
+                        <h3><span class="emoji-title">🎬</span>Full Demo Video</h3>
+                        <div class="demo-video-container">
+                            <video controls class="demo-video">
+                                <source src="images/demo/genai-chat-web/genaichat_demo.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <h3><span class="emoji-title">🖥️</span>Base Layout</h3>
+                        <img src="images/demo/genai-chat-web/base.png" alt="Base Layout" style="width:100%; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+                        
+                        <h3><span class="emoji-title">💬</span>Chat Interface</h3>
+                        <img src="images/demo/genai-chat-web/chat.png" alt="Chat Interface" style="width:100%; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+                    </div>
+                    
+                    <a href="index.html#work" class="back-to-projects">
+                        <i class="fas fa-arrow-left"></i> Back to Projects
+                    </a>
+                </div>
+                
+                <div class="project-sidebar">
+                    <div class="project-info-item">
+                        <h3>Project Type</h3>
+                        <p>Web Application</p>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        <h3>Timeline</h3>
+                        <p>March 28-29, 2025 (2 days)</p>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        <h3>My Role</h3>
+                        <p>Full-Stack Developer</p>
+                        <ul>
+                            <li>Designed and implemented the Django backend</li>
+                            <li>Created the responsive frontend interface</li>
+                            <li>Integrated Google Generative AI API</li>
+                            </ul>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        <h3>Team Size</h3>
+                        <p>Solo Project</p>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        <h3>Technologies</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">Google Generative AI</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">SQLite</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li><strong>Real-time Chat:</strong> Seamless conversation with AI models</li>
+                            <li><strong>Secure API Key Handling:</strong> Environment variables for sensitive data</li>
+                            <li><strong>Multiple Models:</strong> Support for various Gemini models</li>
+                            <li><strong>Responsive Design:</strong> Works on mobile, tablet, and desktop</li>
+                            <li><strong>Chat History:</strong> Stores previous conversations in database</li>
+                            <li><strong>Flexible Database:</strong> Easy to switch from SQLite to other databases</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-info-item">
+                        <h3>Links</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/callmefao/GenAIChat-Web" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> GitHub Repository
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Huynh Anh Phuong. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="demo-script.js"></script>
+</body>
+</html>
