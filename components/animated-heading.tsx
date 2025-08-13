@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useMemo, useRef } from "react"
-import { animate, stagger } from "motion"
+import { animate } from "motion"
 import { cn } from "@/lib/utils"
 
 type AnimatedHeadingProps = {
@@ -65,15 +65,16 @@ export default function AnimatedHeading({
     ;[...wordsByLine.entries()]
       .sort((a, b) => a[0] - b[0])
       .forEach(([lineIndex, words]) => {
-        animate(
-          words,
-          { opacity: 1, filter: "blur(0px)", transform: "translateY(0)" },
-          {
-            duration: durationPerWord,
-            delay: stagger(staggerPerWord, { start: startDelay + lineIndex * lineDelay }),
-            easing: "cubic-bezier(0.22, 1, 0.36, 1)",
-          }
-        )
+        words.forEach((word, wordIndex) => {
+          animate(
+            word,
+            { opacity: "1", filter: "blur(0px)", transform: "translateY(0)" },
+            {
+              duration: durationPerWord,
+              delay: startDelay + lineIndex * lineDelay + wordIndex * staggerPerWord,
+            }
+          )
+        })
       })
   }, [startDelay])
 

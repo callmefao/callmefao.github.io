@@ -2,10 +2,10 @@
 
 import { useEffect, useRef } from "react"
 import type { CSSProperties } from "react"
-import { animate, inView, stagger } from "motion"
+import { animate, inView } from "motion"
 
 type RevealOnViewProps = {
-  as?: keyof JSX.IntrinsicElements
+  as?: keyof React.JSX.IntrinsicElements
   className?: string
   children: React.ReactNode
   /** Optional delay per item for staggered lists */
@@ -54,11 +54,21 @@ export default function RevealOnView({ as = "div", className, children, delay = 
         })
       }
 
-      animate(
-        targets,
-        { opacity: 1, transform: "translateY(0) scale(1)", filter: "blur(0px)" },
-        { duration: 0.95, delay: targets.length > 1 ? stagger(0.12, { start: delay }) : delay, easing: "cubic-bezier(0.22, 1, 0.36, 1)" }
-      )
+      if (staggerChildren && targets.length > 1) {
+        targets.forEach((target, index) => {
+          animate(
+            target,
+            { opacity: "1", transform: "translateY(0) scale(1)", filter: "blur(0px)" },
+            { duration: 0.95, delay: delay + index * 0.12 }
+          )
+        })
+      } else {
+        animate(
+          targets,
+          { opacity: "1", transform: "translateY(0) scale(1)", filter: "blur(0px)" },
+          { duration: 0.95, delay }
+        )
+      }
     })
 
     return () => cleanup()
