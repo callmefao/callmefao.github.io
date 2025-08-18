@@ -50,7 +50,7 @@ export interface CategoryInfo {
 export const personalInfo: PersonalInfo = {
   name: "fao",
   title: "AI Engineer/Web Developer",
-  avatar: "/images/figure-face-swapped.png",
+  avatar: "/images/figure-face-swapped.ico",
   aboutImage: "/images/img1.jpg",
   email: "phuongha27404@gmail.com",
   phone: "+84943848459",

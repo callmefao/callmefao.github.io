@@ -1,20 +1,17 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import IntroOverlay from '@/components/intro-overlay'
+import MagicCursor from '@/components/magic-cursor'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: 'callmefao',
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/images/figure-face-swapped.png" type="image/png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -29,7 +26,11 @@ export default function RootLayout({
 html { font-family: var(--font-sans); }
         `}</style>
       </head>
-      <body>{children}</body>
+      <body>
+        <IntroOverlay />
+        <MagicCursor />
+        {children}
+      </body>
     </html>
   )
 }

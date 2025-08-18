@@ -1,8 +1,8 @@
 "use client"
 
-import Image from "next/image"
-import * as React from "react"
-import { cn } from "@/lib/utils"
+import Image from 'next/image'
+import * as React from 'react'
+import { cn } from '@/lib/utils'
 
 type Slide = {
   src: string
@@ -16,17 +16,11 @@ type Props = {
   className?: string
 }
 
-export default function ShowcaseCarousel({
-  images = [
-    {
-      src: "/placeholder.svg?height=900&width=1600",
-      caption: "Hero slide",
-      from: "#0f172a",
-      to: "#6d28d9",
-    },
-  ],
-  className,
-}: Props) {
+const FALLBACK_SLIDES: Slide[] = [
+  { src: '/placeholder.svg?height=900&width=1600', caption: 'Hero slide', from: '#0f172a', to: '#6d28d9' },
+]
+
+export default function ShowcaseCarousel({ images = FALLBACK_SLIDES, className }: Props) {
   const ref = React.useRef<HTMLDivElement | null>(null)
 
   return (
@@ -45,9 +39,8 @@ export default function ShowcaseCarousel({
             key={i}
             className="relative h-full min-w-full snap-center rounded-[1.2rem] border border-white/10"
             style={{
-              backgroundImage: `linear-gradient(135deg, ${img.from ?? "#0f172a"}, ${
-                img.to ?? "#6d28d9"
-              })`,
+              backgroundImage: `linear-gradient(135deg, ${img.from ?? "#0f172a"}, ${img.to ?? "#6d28d9"
+                })`,
             }}
           >
             {/* Media */}
