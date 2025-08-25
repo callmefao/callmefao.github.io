@@ -27,10 +27,10 @@ export default function Page() {
     <main className="bg-neutral-950 text-white">
       {/* HERO: full-viewport row. Left is sticky; right scrolls internally. */}
       <section className="px-4 pt-4 pb-16 lg:pb-4">
-        <div className="grid h-full grid-cols-1 gap-4 lg:grid-cols-[420px_1fr]">
+  <div className="grid h-full grid-cols-1 gap-4 lg:grid-cols-[420px_1fr] xl:grid-cols-[520px_1fr]">
           {/* LEFT: sticky and full height, no cut off */}
           <aside className="lg:sticky lg:top-4 lg:h-[calc(100svh-2rem)]">
-            <RevealOnView as="div" intensity="hero" className="relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-neutral-900/60 p-6 sm:p-8" staggerChildren>
+            <RevealOnView as="div" intensity="hero" className="relative flex h-full min-h-0 flex-col justify-start overflow-visible rounded-3xl border border-white/10 bg-neutral-900/60 p-5 sm:p-6" staggerChildren>
               {/* Texture background */}
               <div className="pointer-events-none absolute inset-0 opacity-5 mix-blend-soft-light">
                 <DotGridShader />
@@ -44,7 +44,7 @@ export default function Page() {
 
                 {/* Headline with intro blur effect */}
                 <AnimatedHeading
-                  className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl"
+                  className="text-[clamp(1.1rem,2.6vw,1.8rem)] sm:text-[clamp(1.4rem,2.8vw,2.4rem)] lg:text-4xl xl:text-[3.2rem] font-black leading-[1.02] tracking-tight"
                   lines={[`Hello, I'm ${personalInfo.name}`, `I'm an ${personalInfo.title}`]}
                 />
 
@@ -59,19 +59,39 @@ export default function Page() {
                 </div>
 
                 {/* Contact Info */}
-                <div className="mt-10">
+                <div className="mt-8">
                   <p className="mb-3 text-xs font-semibold tracking-widest text-white/50">
                     CONTACT INFORMATION
                   </p>
-                  <div className="space-y-2 text-sm text-white/70">
-                    <div>📧 {personalInfo.email}</div>
+                  <div className="space-y-2 text-[clamp(0.85rem,1.6vw,1rem)] text-white/70">
+                    <div className="break-words">📧 {personalInfo.email}</div>
                     <div>📱 {personalInfo.phone}</div>
                     <div>📍 {personalInfo.address}</div>
                   </div>
                 </div>
 
-                {/* Social Media */}
-                <div className="mt-8">
+                {/* Services */}
+                <div className="mt-6">
+                  <p className="mb-3 text-xs font-semibold tracking-widest text-white/50">
+                    MY SERVICES
+                  </p>
+                  <div className="space-y-3">
+                    {services.map((service) => (
+                      <div key={service.id} className="flex items-start gap-3">
+                        <div className="flex-shrink-0 w-8 h-8 bg-blue-400/20 rounded-lg flex items-center justify-center text-blue-400 mt-0.5">
+                          {getServiceIcon(service.icon)}
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-semibold text-white mb-1">{service.title}</h4>
+                          <p className="text-[clamp(0.75rem,1.4vw,0.95rem)] text-white/60 leading-relaxed">{service.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Social Media (moved down) */}
+                <div className="mt-6">
                   <p className="mb-4 text-xs font-semibold tracking-widest text-white/50">
                     SOCIAL MEDIA
                   </p>
@@ -112,26 +132,6 @@ export default function Page() {
                         <ExternalLink className="w-5 h-5" />
                       </Link>
                     )}
-                  </div>
-                </div>
-
-                {/* Services */}
-                <div className="mt-10">
-                  <p className="mb-4 text-xs font-semibold tracking-widest text-white/50">
-                    MY SERVICES
-                  </p>
-                  <div className="space-y-4">
-                    {services.map((service) => (
-                      <div key={service.id} className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-8 h-8 bg-blue-400/20 rounded-lg flex items-center justify-center text-blue-400 mt-0.5">
-                          {getServiceIcon(service.icon)}
-                        </div>
-                        <div>
-                          <h4 className="text-sm font-semibold text-white mb-1">{service.title}</h4>
-                          <p className="text-xs text-white/60 leading-relaxed">{service.description}</p>
-                        </div>
-                      </div>
-                    ))}
                   </div>
                 </div>
               </div>

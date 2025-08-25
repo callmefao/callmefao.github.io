@@ -15,7 +15,9 @@ const RING_EASE = 0.34 // tốc độ đuổi theo (lerp)
 function lerp(a: number, b: number, t: number) { return a + (b - a) * t }
 
 export default function MagicCursor() {
-    const active = useRef(true)
+    // Start disabled so server + first client render match (prevents hydration mismatch).
+    // Enable only inside useEffect after checking matchMedia on the client.
+    const [enabled, setEnabled] = React.useState<boolean>(false)
     const pos = useRef({ x: 0, y: 0 })
     const ring = useRef({ x: 0, y: 0 })
     const ringRef = useRef<HTMLDivElement | null>(null)
@@ -26,23 +28,26 @@ export default function MagicCursor() {
 
     useEffect(() => {
         if (typeof window === 'undefined') return
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.matchMedia('(pointer: coarse)').matches) { active.current = false; return }
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        const coarse = window.matchMedia('(pointer: coarse)').matches
+        if (reduce || coarse) { setEnabled(false); return }
+        // enable only after checks so initial render stays null
+        setEnabled(true)
 
-    // Init data-hover
-    if (ringRef.current && !ringRef.current.dataset.hover) ringRef.current.dataset.hover = '0'
-    if (dotRef.current && !dotRef.current.dataset.hover) dotRef.current.dataset.hover = '0'
+        // Init data-hover
+        if (ringRef.current && !ringRef.current.dataset.hover) ringRef.current.dataset.hover = '0'
+        if (dotRef.current && !dotRef.current.dataset.hover) dotRef.current.dataset.hover = '0'
 
         const isInteractive = (el: Element | null) => !!el && el.closest('a,button,input,textarea,select,[role=button],[role=link],.cursor-pointer')
         const onMove = (e: PointerEvent) => {
             pos.current.x = e.clientX; pos.current.y = e.clientY
             points.current.unshift({ x: e.clientX, y: e.clientY, t: performance.now() }); if (points.current.length > TRAIL_POINTS) points.current.length = TRAIL_POINTS
             const inter = !!isInteractive(e.target as Element | null)
-                if (inter !== hover.current) {
-                    hover.current = inter
-                    if (ringRef.current) ringRef.current.dataset.hover = inter ? '1' : '0'
-                    if (dotRef.current) dotRef.current.dataset.hover = inter ? '1' : '0'
-                }
-            // dot phản hồi tức thì (không lerp) cho cảm giác chính xác
+            if (inter !== hover.current) {
+                hover.current = inter
+                if (ringRef.current) ringRef.current.dataset.hover = inter ? '1' : '0'
+                if (dotRef.current) dotRef.current.dataset.hover = inter ? '1' : '0'
+            }
             if (dotRef.current) {
                 const scale = hover.current ? 1.85 : 1
                 dotRef.current.style.transform = `translate(${pos.current.x}px, ${pos.current.y}px) scale(${scale})`
@@ -54,8 +59,9 @@ export default function MagicCursor() {
             }
         }
         window.addEventListener('pointermove', onMove, { passive: true })
+        let running = true
         const loop = () => {
-            if (!active.current) return
+            if (!running) return
             const now = performance.now()
             ring.current.x = lerp(ring.current.x, pos.current.x, RING_EASE)
             ring.current.y = lerp(ring.current.y, pos.current.y, RING_EASE)
@@ -69,25 +75,25 @@ export default function MagicCursor() {
                     const r = 1 - age / life
                     if (r <= 0) { span.style.opacity = '0'; return }
                     const hue = (195 + i * 8 + age * 0.06) % 360
-                        const scale = 0.5 + r * 1.05
-                        const alpha = 0.18 + r * 0.65
-                        span.style.opacity = alpha.toString()
-                        span.style.transform = `translate(${p.x}px,${p.y}px) scale(${scale})`
-                        span.style.background = `radial-gradient(circle, hsla(${hue},95%,70%,${0.55 * r}), hsla(${(hue + 50) % 360},90%,60%,${0.25 * r}) 60%, hsla(${(hue + 90) % 360},90%,55%,0) 78%)`
-                        span.style.filter = `blur(${(1 - r) * 1.4 + 0.35}px)`
-                        span.style.boxShadow = `0 0 ${8 + 14 * r}px ${3 * r}px hsla(${hue},95%,65%,${0.5 * r})`
+                    const scale = 0.5 + r * 1.05
+                    const alpha = 0.18 + r * 0.65
+                    span.style.opacity = alpha.toString()
+                    span.style.transform = `translate(${p.x}px,${p.y}px) scale(${scale})`
+                    span.style.background = `radial-gradient(circle, hsla(${hue},95%,70%,${0.55 * r}), hsla(${(hue + 50) % 360},90%,60%,${0.25 * r}) 60%, hsla(${(hue + 90) % 360},90%,55%,0) 78%)`
+                    span.style.filter = `blur(${(1 - r) * 1.4 + 0.35}px)`
+                    span.style.boxShadow = `0 0 ${8 + 14 * r}px ${3 * r}px hsla(${hue},95%,65%,${0.5 * r})`
                 })
                 points.current = points.current.filter(p => now - p.t < 560)
             }
             requestAnimationFrame(loop)
         }
         requestAnimationFrame(loop)
-        return () => window.removeEventListener('pointermove', onMove)
+    return () => { running = false; window.removeEventListener('pointermove', onMove) }
     }, [])
 
-    if (!active.current) return null
+    if (!enabled) return null
     return (
-        <div className="pointer-events-none fixed inset-0 z-[90] select-none" aria-hidden>
+        <div className="pointer-events-none fixed inset-0 z-[90] select-none" aria-hidden={true}>
             {HIDE_NATIVE && (
                 <style>{`
                     body{cursor:none}

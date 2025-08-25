@@ -38,6 +38,13 @@ export function IntroOverlay() {
 
     useEffect(() => {
         setMounted(true)
+        // Remove server-rendered blocking overlay (if present) as soon as the client overlay mounts
+        try {
+            const init = document.getElementById('initial-overlay')
+            if (init && init.parentNode) init.parentNode.removeChild(init)
+        } catch (e) {
+            /* ignore in non-browser or if element missing */
+        }
         const totalChars = lines.reduce((a, l) => a + l.length, 0)
         const pauses = INTRO.linePause * (lines.length - 1)
         const fixed = INTRO.holdAfter + INTRO.exitFade + pauses
