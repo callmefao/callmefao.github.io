@@ -1,4 +1,4 @@
-import ProjectDetailLayout from "@/components/project-detail-layout"
+/import ProjectDetailLayout from "@/components/project-detail-layout"
 
 export default function FPTCinemaManagementPage() {
   return (
@@ -43,7 +43,7 @@ export default function FPTCinemaManagementPage() {
       ]}
       images={[
         {
-          src: "/images/fsoft-logo.png",
+          src: "/images/demo/MovieTheaterManagement.png",
           alt: "FPT Software Cinema Management System",
           caption: "Student Internship Project at FPT Software - Cinema Management System",
         },
