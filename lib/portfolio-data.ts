@@ -108,7 +108,7 @@ const projectsData: Project[] = [
     category: "internship",
     organization: "FPT Software",
     description: "Mock project for Student Internship at FPT Software. A comprehensive cinema management system featuring ticket booking, movie management, booking administration, and AI-powered chatbot assistance. This project demonstrates modern software development practices using microservices architecture and agile methodologies.",
-    imageSrc: "/images/fsoft-logo.png",
+    imageSrc: "/images/demo/MovieTheaterManagement.png",
     tags: ["Spring Boot", "FastAPI", "React.js", "PostgreSQL", "Qdrant", "Docker", "GitLab", "Jira", "Agile", "FSoft"],
     timeline: "05/2025 - 08/2025",
     timelineSort: new Date(2025, 7), // August 2025

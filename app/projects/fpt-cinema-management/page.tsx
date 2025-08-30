@@ -1,4 +1,4 @@
-/import ProjectDetailLayout from "@/components/project-detail-layout"
+import ProjectDetailLayout from "@/components/project-detail-layout"
 
 export default function FPTCinemaManagementPage() {
   return (
